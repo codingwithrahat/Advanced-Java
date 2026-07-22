@@ -1,0 +1,130 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg,#edf2fb,#d7e3fc);
+    min-height:100vh;
+    padding:40px;
+}
+
+/* Heading */
+h1{
+    text-align:center;
+    color:#1d3557;
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+/* Empty Message */
+p{
+    text-align:center;
+    color:#d90429;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+/* Add Product Button */
+body > a{
+    display:block;
+    width:180px;
+    margin:25px auto;
+    text-align:center;
+    text-decoration:none;
+    background:linear-gradient(90deg,#00b09b,#96c93d);
+    color:#fff;
+    padding:14px;
+    border-radius:50px;
+    font-weight:bold;
+    font-size:16px;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+body > a:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+/* Table */
+table{
+    width:90%;
+    margin:auto;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+/* Header */
+th{
+    background:linear-gradient(90deg,#4f46e5,#2563eb);
+    color:white;
+    padding:16px;
+    font-size:16px;
+    letter-spacing:.5px;
+}
+
+/* Data */
+td{
+    padding:15px;
+    text-align:center;
+    color:#444;
+    border-bottom:1px solid #eee;
+}
+
+tr:last-child td{
+    border-bottom:none;
+}
+
+tr:nth-child(even){
+    background:#f8f9ff;
+}
+
+tr:hover{
+    background:#e7f0ff;
+    transition:.3s;
+}
+
+/* Remove Button */
+td a{
+    text-decoration:none;
+    background:#ef4444;
+    color:white;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+    display:inline-block;
+}
+
+td a:hover{
+    background:#b91c1c;
+    transform:scale(1.05);
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    body{
+        padding:20px;
+    }
+
+    table{
+        width:100%;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    th,
+    td{
+        padding:10px;
+        font-size:14px;
+    }
+}

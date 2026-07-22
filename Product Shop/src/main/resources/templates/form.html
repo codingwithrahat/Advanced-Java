@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/styleForm.css}">
 </head>
 <body>
 <h1>Product form</h1>
 
 <form method="post"  th:action="@{/product/add}" th:object="${product}">
-    <label>Product ID</label><br>
+    <label>Product ID</label>
     <input type="text" th:field="*{id}"><br>
     <span th:errors="*{id}" style="color: red"></span>
     <br><br>
@@ -22,15 +23,19 @@
     <input type="text" th:field="*{category}">
     <br><br>
 
-    <label>Stock</label><br>
+    <label>Stock</label>
     <input type="number" th:field="*{stock}">
     <br><br>
 
-    <label>Price</label><br>
+    <label>Price</label>
     <input type="number" th:field="*{price}">
     <br><br>
 
     <button type="submit">Add Product</button>
+
+    <br><br>
+
+    <a href="/product/list">back to list</a>
 </form>
 </body>
 </html>
