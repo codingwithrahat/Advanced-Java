@@ -5,68 +5,61 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
 @Controller
-@RequestMapping("/product")
-public class ProductController {
+@RequestMapping("/cake")
+public class CakeController {
 
-    private final List<Product> products = new ArrayList<>();
+    private final List<Cake> cakeOrders = new ArrayList<>();
+
 
     @GetMapping("/add")
-    public String showForm(Model model){
-        model.addAttribute("name","Mr. Java");
-        model.addAttribute("product", new Product());
+    public String showForm(Model model) {
+        model.addAttribute("cake", new Cake());
         return "form";
     }
 
-    @PostMapping("/add")
-    public String submit(@Valid @ModelAttribute Product product, BindingResult bindingResult){
-        log.info("Product {} has been submitted",product);
 
-        if(bindingResult.hasErrors()){
+    @PostMapping("/add")
+    public String submit(@Valid @ModelAttribute("cake") Cake cake,
+                         BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
             return "form";
         }
 
-        products.add(product);
-        log.info("Product {} has been saved", product);
+        cakeOrders.add(cake);
 
-        return "redirect:/product/add";
+        log.info("Cake Order {} has been saved.", cake);
+
+        return "redirect:/cake/list";
     }
 
-
-
-
-    //list
 
     @GetMapping("/list")
-    public String list(Model model){
-        model.addAttribute("products", products);
+    public String list(Model model) {
+        model.addAttribute("cakes", cakeOrders);
         return "list";
     }
-
-
-
 
     @GetMapping("/remove/{id}")
     public String remove(@PathVariable String id) {
 
-        products.removeIf(product -> product.getId().equals(id));
+        for (int i = 0; i < cakeOrders.size(); i++) {
+//
+//            if (cakeOrders.get(i).getId()) {
+//                cakeOrders.remove(i);
+//                break;
+//            }
+        }
 
-        log.info("Product with ID {} removed", id);
+        log.info("Cake Order with ID {} has been removed.", id);
 
-        return "redirect:/product/list";
+        return "redirect:/cake/list";
     }
-
-
-    
-
 }

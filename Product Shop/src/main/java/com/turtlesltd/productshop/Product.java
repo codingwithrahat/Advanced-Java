@@ -1,5 +1,7 @@
 package com.turtlesltd.productshop;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,19 +10,25 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
-    @NotNull(message = "ID is required")
-    @Size(min=1,max=100,message = "ID must be between 1-100")
-    private String id;
-    @NotBlank(message = "Name can't blank")
-    private String name;
-    @NotEmpty
-    private String category;
+@Entity
+public class Cake {
 
-    @NotNull(message = "Stock is required")
-    @PositiveOrZero(message = "Stock can not be zero")
-    private int stock;
+    @Id
+    @NotNull(message = "Order ID is required")
+    @Size(min = 1, max = 100, message = "Order ID must be between 1 and 100 characters")
+    private int id;
 
-    @NotNull(message = "price is required")
-    private double price;
+    @NotBlank(message = "Customer name can't be blank")
+    private String customerName;
+
+    @NotBlank(message = "Phone number can't be blank")
+    private String phone;
+
+    @NotBlank(message = "Cake flavor can't be blank")
+    private String flavor;
+
+    @NotNull(message = "Cake weight is required")
+    @Positive(message = "Cake weight must be greater than 0")
+    @DecimalMin(value = "0.0", message = "Price cannot be negative")
+    private Double weight;
 }
