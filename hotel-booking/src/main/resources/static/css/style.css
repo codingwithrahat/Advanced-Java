@@ -1,0 +1,232 @@
+/* ============================
+   Hotel Booking System — Green Theme
+============================ */
+
+:root {
+    --green-dark: #1b4332;
+    --green-primary: #2d6a4f;
+    --green-mid: #40916c;
+    --green-light: #74c69d;
+    --green-pale: #d8f3dc;
+    --green-bg: #f1faf4;
+    --amber: #e0a106;
+    --red: #c1121f;
+    --text-dark: #1b2b22;
+    --text-muted: #5c6b63;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, var(--green-pale) 0%, var(--green-bg) 220px);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 32px 36px;
+    background-color: var(--white);
+    border-radius: 14px;
+    border-top: 6px solid var(--green-primary);
+    box-shadow: 0 10px 30px rgba(27, 67, 50, 0.12);
+}
+
+.mt-5 { margin-top: 40px; }
+.mt-4 { margin-top: 24px; }
+.mt-3 { margin-top: 16px; }
+.mb-4 { margin-bottom: 24px; }
+.mb-3 { margin-bottom: 16px; }
+.mb-2 { margin-bottom: 8px; }
+
+h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--green-dark);
+    letter-spacing: 0.3px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--green-light);
+    border-radius: 2px;
+}
+
+h5 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--green-mid);
+    border-bottom: 1px solid var(--green-pale);
+    padding-bottom: 8px;
+}
+
+/* ============================
+   Forms
+============================ */
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.form-control,
+.form-select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1.5px solid #cfe8d8;
+    border-radius: 8px;
+    background-color: var(--green-bg);
+    color: var(--text-dark);
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--green-mid);
+    background-color: var(--white);
+    box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.18);
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--green-bg);
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+.form-check-input {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--green-primary);
+}
+
+.form-check-label {
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+/* ============================
+   Buttons
+============================ */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.1s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+.btn-primary {
+    background-color: var(--green-primary);
+    color: var(--white);
+}
+.btn-primary:hover { background-color: var(--green-dark); }
+
+.btn-success {
+    background: linear-gradient(135deg, var(--green-mid), var(--green-primary));
+    color: var(--white);
+}
+.btn-success:hover { background: var(--green-dark); }
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--green-primary);
+    border: 1.5px solid var(--green-mid);
+}
+.btn-secondary:hover { background-color: var(--green-pale); }
+
+.btn-warning {
+    background-color: var(--amber);
+    color: var(--white);
+}
+.btn-warning:hover { background-color: #b57e04; }
+
+.btn-danger {
+    background-color: var(--red);
+    color: var(--white);
+}
+.btn-danger:hover { background-color: #950f18; }
+
+/* ============================
+   Table
+============================ */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table th,
+.table td {
+    padding: 12px 14px;
+    text-align: left;
+}
+
+.table-bordered td {
+    border-bottom: 1px solid var(--green-pale);
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: var(--green-bg);
+}
+
+.table-striped tbody tr:hover {
+    background-color: var(--green-pale);
+}
+
+.table-dark {
+    background-color: var(--green-dark);
+    color: var(--white);
+}
+
+.table-dark th {
+    color: var(--white);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.table td .btn {
+    margin-right: 6px;
+}

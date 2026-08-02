@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookings</title>
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Bookings</h2>
+
+    <a th:href="@{/bookings/add}" class="btn btn-primary mb-3">Add Booking</a>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Guest Name</th>
+                <th>Guest Email</th>
+                <th>Floor</th>
+                <th>Room Number</th>
+                <th>Check In</th>
+                <th>Check Out</th>
+                <th>Days</th>
+                <th>Amount</th>
+                <th>Payment Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="b : ${bookings}">
+                <td th:text="${b.guestName}"></td>
+                <td th:text="${b.guestEmail}"></td>
+                <td th:text="${b.floor}"></td>
+                <td th:text="${b.roomNumber}"></td>
+                <td th:text="${b.checkInDate}"></td>
+                <td th:text="${b.checkOutDate}"></td>
+                <td th:text="${b.days}"></td>
+                <td th:text="${b.amount}"></td>
+                <td th:text="${b.paymentStatus}"></td>
+                <td>
+                    <a th:href="@{/bookings/edit/{id}(id=${b.id})}" class="btn btn-sm btn-warning">Update</a>
+                    <a th:href="@{/bookings/delete/{id}(id=${b.id})}" class="btn btn-sm btn-danger"
+                       onclick="return confirm('Are you sure you want to delete this booking?');">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
