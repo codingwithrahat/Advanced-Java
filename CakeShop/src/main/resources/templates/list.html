@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cake Order List</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<h1>Cake Order List</h1>
+
+<p th:if="${cakes.isEmpty()}">No cake orders available.</p>
+
+<a href="/cake/add">Add New Order</a>
+
+<table border="1" th:unless="${cakes.isEmpty()}">
+
+    <tr>
+        <th>Order ID</th>
+        <th>Customer Name</th>
+        <th>Phone Number</th>
+        <th>Cake Flavor</th>
+        <th>Cake Weight (KG)</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="cake : ${cakes}">
+        <td th:text="${cake.id}"></td>
+        <td th:text="${cake.customerName}"></td>
+        <td th:text="${cake.phone}"></td>
+        <td th:text="${cake.flavor}"></td>
+        <td th:text="${cake.weight}"></td>
+        <td>
+            <a th:href="@{/cake/remove/{id}(id=${cake.id})}">Remove</a>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

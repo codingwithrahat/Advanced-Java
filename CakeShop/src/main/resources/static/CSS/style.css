@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Add Product Button */
+a {
+    text-decoration: none;
+}
+
+body > a {
+    display: inline-block;
+    margin-bottom: 20px;
+    background: #28a745;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+body > a:hover {
+    background: #218838;
+}
+
+/* Table */
+table {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 14px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table tr:first-child {
+    background: #007bff;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+table tr:hover {
+    background: #eef5ff;
+}
+
+/* Remove Button */
+table a {
+    display: inline-block;
+    background: #dc3545;
+    color: white;
+    padding: 7px 14px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+table a:hover {
+    background: #bb2d3b;
+}
