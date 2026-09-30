@@ -7,6 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Builder
 @Data
@@ -24,4 +27,6 @@ public class User {
 
     @NotBlank(message = "need pass")
     private String hashPassword;
+
+    private List<String> roles = new ArrayList<>();
 }
